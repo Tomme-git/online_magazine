@@ -432,10 +432,15 @@ footer > a {
     margin-bottom: 0;
   }
 
+  .articleteaser h2 {
+    padding: 30% 10px 10px 0;
+  }
+
   main > section > h2 {
     width: 60vw;
     margin: 10vh auto 10vh auto;
   }
+
 }
 
 @media only screen and (max-width: 768px) {
