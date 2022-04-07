@@ -64,10 +64,8 @@ header {
   display: none;
   position: absolute;
   background-color: #000;
-  width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  left:0;
 }
 
 /* Links inside the dropdown */
@@ -124,7 +122,7 @@ header {
 
 main {
   background-color: white;
-  height: 1000px;
+  min-height: 1000px;
 }
 
 main > section > h1 {
@@ -140,7 +138,7 @@ main > section > h2 {
   text-align: center;
   border: 1px solid black;
   border-radius: 5px;
-  width: 400px;
+  width: 25vw;
   margin: 100px auto 100px auto;
 }
 
@@ -164,10 +162,10 @@ main > section > h2 > a:hover {
 
 main > section > div {
   width: 100%;
-  min-width: 1230px;
   display: flex;
   justify-content: space-evenly;
   margin: 0 auto;
+  flex-wrap:wrap;
 }
 
 main > section > div > a {
@@ -175,11 +173,16 @@ main > section > div > a {
 }
 
 .article {
-  height: 400px;
-  width: 400px;
+  height: 25vw;
+  min-height: 360px;
+  width: 25vw;
+  min-width: 360px;
   background-color: black;
   border-radius: 10px;
   box-shadow: 0 0 5px 3px black;
+  position: relative;
+  overflow:hidden;
+
 }
 
 .article:hover {
@@ -193,8 +196,7 @@ main > section > div > a {
   opacity: 0.5;
   position: absolute;
   border-radius: 10px;
-  height: 400px;
-  width: 400px;
+  width: 100%;
 }
 
 .articleteaser {
@@ -205,7 +207,7 @@ main > section > div > a {
 .articleteaser > h2 {
   font-family: "Open Sans", sans-serif;
   text-align: center;
-  padding: 134px 10px 10px 0;
+  padding: 35% 10px 10px 0;
 }
 
 .articleteaser > p {
@@ -393,16 +395,11 @@ footer > a {
 
 /****************************** Mobile ******************************/
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   #navflex {
     width: 100%;
-    flex-direction: column;
-    height: 30vh;
-  }
+  }  
 
-  #navflex > a {
-    margin:0 auto;
-  }
 
   #navflex > nav {
     display: none;
@@ -411,19 +408,71 @@ footer > a {
   .dropdown {
     display: block;
   }
+  
+  .dropdown-content {
+    width: 30%;
+    right: 4%;
+    left: auto;
+  }
+  main > section > h1 {
+    padding: 50px 10px;
+  }
+
+  main > section > div {
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main > section > div > a {
+    margin-bottom: 50px;
+  }
+
+  main > section > div > a:last-child {
+    margin-bottom: 0;
+  }
+
+  main > section > h2 {
+    width: 60vw;
+    margin: 10vh auto 10vh auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #navflex {
+    flex-direction: column;
+    height: 200px;
+  }
+
+  .dropdown-content {
+    width: 100%;
+    left: 0;
+  }
+
 
   #herotext {
     margin: 0;
-    bottom: 20vh;
+    bottom: 30vh;
   }
 
   #herotext > h1 {
     margin:0 0 10vh 0;
-    font-size: 35pt;
+    font-size: 25pt;
   }
 
   #herotext > h2 {
     margin:0;
     font-size: 20pt;
   }
+
+  footer {
+    flex-direction: column;
+  }
+
+  footer a, footer p {
+    border: none;
+  }
+
+
 }
+
